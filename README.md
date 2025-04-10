@@ -6,4 +6,4 @@
   <kbd>![koa](./koamigration.drawio.png)</kbd>
 
 ## Adding i18n to existing FE apps
-  <kbd>![i18n](./ch-i18nsupport.drawio.svg)</kbd>
+  <kbd>![i18n](./ch-i18nsupport.drawio.png)</kbd>
