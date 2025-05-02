@@ -1,0 +1,117 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36" version="26.2.14">
+  <diagram name="Page-1" id="m_6jQrVYjRafG1zzw3F9">
+    <mxGraphModel dx="1205" dy="1860" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-1" value="&lt;h1&gt;Design Facebook News Feed&lt;/h1&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="280" y="-20" width="350" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-2" value="&lt;h2&gt;Functional Requirements&lt;/h2&gt;&lt;div&gt;&lt;ol&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Users can create posts&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Users can add friends/follow posts&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Users can view posts in chronologic order&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Users can page through feeds&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="40" width="290" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-3" value="&lt;h2&gt;Non-functional Requirements&lt;/h2&gt;&lt;div&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;availability &amp;gt;&amp;gt; consistency (&amp;lt;2 minutes eventual consistency)&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;posting/viewing feed &amp;lt; 500ms&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;handle &amp;lt; 2B users&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;follow unlimited users -&amp;gt; fanout&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="280" y="40" width="390" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-4" value="&lt;h2&gt;Entities&lt;/h2&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;ul&gt;&lt;li&gt;User&lt;/li&gt;&lt;li&gt;Post&lt;/li&gt;&lt;li&gt;Follow userA -&amp;gt; userB&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="640" y="40" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-5" value="&lt;h2&gt;API&lt;/h2&gt;&lt;div style=&quot;text-align: left;&quot;&gt;POST: /api/v1/post&amp;nbsp; {title, content, images} -&amp;gt; postId&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;POST /users/{id}/followers&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;GET /feed -&amp;gt; items[]&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="50" y="165" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-6" value="&lt;h2&gt;Out of Scope&lt;/h2&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;ul&gt;&lt;li&gt;like/comment&lt;/li&gt;&lt;li&gt;private posts&lt;/li&gt;&lt;li&gt;auth (session token or JWT)&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="360" y="160" width="210" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-7" value="&lt;h2&gt;High Level Design&lt;/h2&gt;&lt;div&gt;&lt;ol&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Create posts&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Friend/follow&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;View Feed&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Page through feed&lt;/li&gt;&lt;/ol&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="50" y="290" width="180" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="c-sIcovVO0u_QPYY0Lf_-8" target="c-sIcovVO0u_QPYY0Lf_-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-8" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="340" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="c-sIcovVO0u_QPYY0Lf_-9" target="c-sIcovVO0u_QPYY0Lf_-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="c-sIcovVO0u_QPYY0Lf_-9" target="c-sIcovVO0u_QPYY0Lf_-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="c-sIcovVO0u_QPYY0Lf_-9">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="490" y="550" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="400" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-9" value="API + Load Balancer" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="360" y="330" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="c-sIcovVO0u_QPYY0Lf_-15" target="c-sIcovVO0u_QPYY0Lf_-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-46" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="c-sIcovVO0u_QPYY0Lf_-15" target="c-sIcovVO0u_QPYY0Lf_-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-15" value="Post Service" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="390" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-17" value="Post DB" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="350" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-19" value="Key/value&lt;div&gt;(DynamoDB)&lt;/div&gt;&lt;div&gt;tables:&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Post&lt;/li&gt;&lt;li&gt;Follow&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="650" y="435" width="100" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="c-sIcovVO0u_QPYY0Lf_-20" target="c-sIcovVO0u_QPYY0Lf_-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-20" value="Follow Service" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="455" width="85" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="c-sIcovVO0u_QPYY0Lf_-24" target="c-sIcovVO0u_QPYY0Lf_-32">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="560" />
+              <mxPoint x="620" y="585" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="575" as="sourcePoint" />
+            <mxPoint x="650" y="505" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="620" y="575" />
+              <mxPoint x="620" y="505" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-24" value="Feed Service" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="535" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-32" value="Feed Cache (Redis)" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="530" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-36" value="&lt;ul&gt;&lt;li&gt;infinite scroll: cursor is last seen timestamp for userID&lt;/li&gt;&lt;li&gt;foreach all followers -&amp;gt; foreach all posts -&amp;gt; not scalable&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;cache: Post+Follow = Feed Cache (500 items per user)&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;TTL: 120s&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;next page=oldest seen post -&amp;gt; cache will provide 50 older&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="15" y="435" width="370" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-37" value="&lt;h2&gt;Deep Dives&lt;/h2&gt;&lt;div&gt;&lt;ol&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Following large number of users: fanout -&amp;gt; we should set max number. Precomputed Feed table [postId, userId]&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Large number of followers: use a queue + async workers.&amp;nbsp; If &amp;gt; 100M followers -&amp;gt; real time calculation (and tune the number)&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Uneven read of posts: cache Post table&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="620" width="720" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-39" value="Post/ Create queue" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="485" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="c-sIcovVO0u_QPYY0Lf_-41" target="c-sIcovVO0u_QPYY0Lf_-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="c-sIcovVO0u_QPYY0Lf_-41" target="c-sIcovVO0u_QPYY0Lf_-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c-sIcovVO0u_QPYY0Lf_-41" value="async workers" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
