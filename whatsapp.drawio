@@ -1,0 +1,134 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36" version="26.2.14">
+  <diagram name="Page-1" id="hKqQdsgMhx3ELjw1M2jb">
+    <mxGraphModel dx="1205" dy="1860" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-1" value="&lt;h1&gt;WhatsApp&lt;/h1&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="370" y="-10" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-2" value="&lt;h2&gt;Functional Requirements&lt;/h2&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;ol&gt;&lt;li&gt;Users can start group chats (&amp;lt;100 participants)&lt;/li&gt;&lt;li&gt;Users can send/receive messages&lt;/li&gt;&lt;li&gt;Offline users receive messages when they reconnect&lt;/li&gt;&lt;li&gt;Users can send media&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="40" width="340" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-3" value="&lt;h2&gt;Non-Functional Requirements&lt;/h2&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;ul&gt;&lt;li&gt;message delivery &amp;lt;500ms&lt;/li&gt;&lt;li&gt;guaranteed delivery&lt;/li&gt;&lt;li&gt;1B DAU with high throughput&lt;/li&gt;&lt;li&gt;messages will expire on server (privacy vs offline delivery &amp;lt; 30 days)&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="390" y="40" width="430" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-4" value="&lt;h2&gt;Out of Scope&lt;/h2&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;security/encryption&lt;/li&gt;&lt;li&gt;spam/bot abuse detection&lt;/li&gt;&lt;li&gt;video calls&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="80" y="170" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-5" value="&lt;h2&gt;Entities&lt;/h2&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;Users&lt;/li&gt;&lt;li&gt;Messages&lt;/li&gt;&lt;li&gt;Chats (1:1 == 1:N)&lt;/li&gt;&lt;li&gt;Clients (user -&amp;gt; multiple devices)&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="425" y="170" width="240" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-6" value="&lt;h2&gt;APIs&lt;/h2&gt;&lt;div&gt;websockets + L4 LB&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="70" y="305" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-7" value="createChat()&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;{ name, participants[] } -&amp;gt; chatId&lt;/span&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="235" y="320" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-8" value="sendMessage()&lt;div&gt;{ chatId, message, attachments[] } -&amp;gt; OK | ERROR&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="190" y="370" width="290" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-9" value="newMessage()&lt;div&gt;{ chatId, message, attachments[] }&amp;nbsp;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="560" y="325" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-10" value="updateParticipants()&lt;div&gt;{ chatId, participants[] }&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="580" y="370" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-11" value="&lt;b&gt;send&lt;/b&gt;:" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="275" y="298" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-12" value="&lt;b&gt;receive:&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="565" y="298" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-13" value="&lt;h2&gt;High Level Design&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="55" y="410" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-14" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="560" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="O-a3bV3vedFQIhXiLgaq-17" target="O-a3bV3vedFQIhXiLgaq-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="O-a3bV3vedFQIhXiLgaq-17">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="321.25" y="660" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="227.25" y="630" />
+              <mxPoint x="322.25" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-17" value="L4 LB" style="whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="170" y="570" width="115" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-19" value="websocket" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="100" y="540" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="O-a3bV3vedFQIhXiLgaq-22" target="O-a3bV3vedFQIhXiLgaq-45">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="461.25" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="O-a3bV3vedFQIhXiLgaq-22" target="O-a3bV3vedFQIhXiLgaq-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-22" value="Chat Server" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="330" y="570" width="87.5" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-26" value="Media Service" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="286.25" y="660" width="105" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-29" value="&lt;h2&gt;Deep Dives&lt;/h2&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;ul&gt;&lt;li&gt;Inbox table maintains messages for clients&lt;/li&gt;&lt;li&gt;As client reconnects, deliver message and delete from Inbox&lt;/li&gt;&lt;li&gt;Websocket service + Redis pub/sub&amp;nbsp;&lt;/li&gt;&lt;li&gt;sharding on userId&lt;/li&gt;&lt;li&gt;Redis Cluster/Redis Sentinel&lt;/li&gt;&lt;li&gt;ChatDB sharding on userId replication&lt;/li&gt;&lt;li&gt;S3 for media + presigned URLs&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="465" y="610" width="380" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-30" value="Websocket Service" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="313.75" y="500" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-34" value="Pub/Sub" style="sketch=0;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;spacingTop=-6;fontSize=11;fontStyle=1;fontColor=#999999;shape=image;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjE4LjMxOTk5OTY5NDgyNDIyIiBoZWlnaHQ9IjIwLjAwMDAwMTkwNzM0ODYzMyIgdmlld0JveD0iMCAwIDE4LjMxOTk5OTY5NDgyNDIyIDIwLjAwMDAwMTkwNzM0ODYzMyI+JiN4YTsJPHN0eWxlIHR5cGU9InRleHQvY3NzIj4mI3hhOwkuc3Qwe2ZpbGw6IzY2OWRmNjt9JiN4YTsJLnN0MXtmaWxsOiM0Mjg1ZjQ7fSYjeGE7CS5zdDJ7ZmlsbDojYWVjYmZhO30mI3hhOwk8L3N0eWxlPiYjeGE7CTxkZWZzPiYjeGE7CQk8ZmlsdGVyIGlkPSJBIiB4PSI0LjY0IiB5PSI0LjE5IiB3aWR0aD0iMTQuNzMiIGhlaWdodD0iMTIuNzYiIGZpbHRlclVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJzUkdCIj4mI3hhOwkJCTxmZUZsb29kIGZsb29kLWNvbG9yPSIjZmZmIi8+JiN4YTsJCQk8ZmVCbGVuZCBpbj0iU291cmNlR3JhcGhpYyIvPiYjeGE7CQk8L2ZpbHRlcj4mI3hhOwkJPG1hc2sgaWQ9IkIiIHg9IjQuNjQiIHk9IjQuMTkiIHdpZHRoPSIxNC43MyIgaGVpZ2h0PSIxMi43NiIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSI+JiN4YTsJCQk8Y2lyY2xlIGN4PSIxMiIgY3k9IjEyLjIzIiByPSIzLjU4IiBmaWx0ZXI9InVybCgjQSkiLz4mI3hhOwkJPC9tYXNrPiYjeGE7CTwvZGVmcz4mI3hhOwk8ZyBjbGFzcz0ic3QwIj4mI3hhOwkJPGNpcmNsZSBjeD0iMTYuMTMiIGN5PSI2LjIxIiByPSIxLjcyIi8+JiN4YTsJCTxjaXJjbGUgY3g9IjIuMTkiIGN5PSI2LjIxIiByPSIxLjcyIi8+JiN4YTsJCTxjaXJjbGUgY3g9IjkuMTYiIGN5PSIxOC4yOCIgcj0iMS43MiIvPiYjeGE7CTwvZz4mI3hhOwk8ZyBtYXNrPSJ1cmwoI0IpIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMi44NCAtMikiPiYjeGE7CQk8cGF0aCB0cmFuc2Zvcm09Im1hdHJpeCguNSAtLjg3IC44NyAuNSAtNC41OSAyMC41MykiIGQ9Ik0xNC42OSAxMC4yMmgxLjU5djguMDRoLTEuNTl6IiBjbGFzcz0ic3QxIi8+JiN4YTsJCTxwYXRoIHRyYW5zZm9ybT0icm90YXRlKDMzMCA4LjUyMyAxNC4yNDQpIiBkPSJNNC40OSAxMy40NWg4LjA0djEuNTlINC40OXoiIGNsYXNzPSJzdDEiLz4mI3hhOwkJPHBhdGggZD0iTTExLjIgNC4xOWgxLjU5djguMDRIMTEuMnoiIGNsYXNzPSJzdDEiLz4mI3hhOwk8L2c+JiN4YTsJPGcgY2xhc3M9InN0MiI+JiN4YTsJCTxjaXJjbGUgY3g9IjkuMTYiIGN5PSIxMC4yMyIgcj0iMi43OCIvPiYjeGE7CQk8Y2lyY2xlIGN4PSIyLjE5IiBjeT0iMTQuMjUiIHI9IjIuMTkiLz4mI3hhOwkJPGNpcmNsZSBjeD0iMTYuMTMiIGN5PSIxNC4yNSIgcj0iMi4xOSIvPiYjeGE7CQk8Y2lyY2xlIGN4PSI5LjE2IiBjeT0iMi4xOSIgcj0iMi4xOSIvPiYjeGE7CTwvZz4mI3hhOzwvc3ZnPg==;" vertex="1" parent="1">
+          <mxGeometry x="352" y="440" width="38" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-35" value="Redis Pub/Sub" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="400" y="440" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-39" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="300" y="740" as="sourcePoint" />
+            <mxPoint x="110" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-40" value="pre-signed URLs" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="O-a3bV3vedFQIhXiLgaq-39">
+          <mxGeometry x="0.108" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="O-a3bV3vedFQIhXiLgaq-26" target="O-a3bV3vedFQIhXiLgaq-36">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="339" y="710" as="sourcePoint" />
+            <mxPoint x="339" y="770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-36" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.s3;fillColor=#E05243;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="313.75" y="740" width="50" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-43" value="S3 Blob Storage" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="283.75" y="780" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-44" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/Azure_Database_MySQL_Server.svg;" vertex="1" parent="1">
+          <mxGeometry x="481" y="496" width="48" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-45" value="ChatDB" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="470" y="560" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-46" value="&lt;b&gt;ChatDB:&lt;/b&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;ul&gt;&lt;li&gt;chat: id, name, createdAt, createdBy...&lt;/li&gt;&lt;li&gt;message: id, content, chatId, createdAt, createdBy&lt;/li&gt;&lt;li&gt;inbox: recipientId, messageId&lt;/li&gt;&lt;li&gt;clients: clientId, userId&amp;nbsp;&lt;/li&gt;&lt;li&gt;attachments: id, messageId, s3url, metadata...&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="510" y="460" width="330" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="O-a3bV3vedFQIhXiLgaq-49" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="O-a3bV3vedFQIhXiLgaq-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="120" y="640" as="sourcePoint" />
+            <mxPoint x="170" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
