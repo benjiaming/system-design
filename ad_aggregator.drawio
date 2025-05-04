@@ -1,0 +1,195 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36" version="26.2.14">
+  <diagram name="Page-1" id="DeLP3k0KMG2PH7q6J_mw">
+    <mxGraphModel dx="1205" dy="784" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-1" value="&lt;h1&gt;Ad Aggregator&lt;/h1&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="320" y="20" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-2" value="&lt;h2 style=&quot;text-align: left;&quot;&gt;Functional Requirements&lt;/h2&gt;&lt;div&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;users click on ad and are redirected to advertiser&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;advertisers can query metrics over time (granularity &amp;lt;1m)&lt;/li&gt;&lt;/ul&gt;&lt;h2 style=&quot;text-align: left;&quot;&gt;Out of scope&lt;/h2&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;ad targeting/serving&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;cross-device tracking&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;offline integration w/marketing channels&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="40" width="370" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-3" value="&lt;h2&gt;Non-Functional Requirements&lt;/h2&gt;&lt;div&gt;10M active ads + 10K clicks/sec, 100M clicks/day&lt;/div&gt;&lt;div&gt;&lt;ol&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Support &amp;lt;10K clicks/sec&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Latency for analytics queries &amp;lt;1s&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;fault tolerance&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;strong consistency&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;realtime&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;idempotent click tracking&lt;/li&gt;&lt;/ol&gt;&lt;h2 style=&quot;text-align: left;&quot;&gt;Out of Scope&lt;/h2&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;fraud/spam detection&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;conversion tracking&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="510" y="40" width="290" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-4" value="&lt;h2&gt;System Interface&lt;/h2&gt;&lt;div&gt;&lt;ol&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Input (ad click data)&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;output (ad click metrics)&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="15" y="240" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-5" value="&lt;h2&gt;Data Flow&lt;/h2&gt;&lt;div&gt;&lt;ol&gt;&lt;li style=&quot;text-align: left;&quot;&gt;User clicks on ad&lt;/li&gt;&lt;li&gt;Click is tracked and stored&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;User is redirected&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;advertisers query aggregated click metrics&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="220" y="230" width="290" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-6" value="&lt;h2&gt;High Level Design&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="343" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-7" value="&lt;ol&gt;&lt;li&gt;User clicks on add&lt;/li&gt;&lt;/ol&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="408" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-8" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="408" width="20" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-9" value="Add Placement Service" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ItXA_61CWnjTCcT5c4l9-10" target="ItXA_61CWnjTCcT5c4l9-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-10" value="Add DB" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="395" width="70" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-13" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="420" as="sourcePoint" />
+            <mxPoint x="360" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-14" value="Click Processor" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="480" width="120" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-15" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="440" as="sourcePoint" />
+            <mxPoint x="360" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-17" value="2. Advertisers query click metrics" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="620" y="418" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ItXA_61CWnjTCcT5c4l9-19" target="ItXA_61CWnjTCcT5c4l9-22">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="625" y="473" />
+              <mxPoint x="625" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-19" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="660" y="458" width="20" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-20" value="Advertiser" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="630" y="488" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-21" value="User" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="225" y="445" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-22" value="Analytics Service" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="510" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-23" value="OLAP DB" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="450" width="80" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-28" value="&lt;h2 style=&quot;text-align: left;&quot;&gt;Deep Dive&lt;/h2&gt;&lt;div&gt;&lt;ol&gt;&lt;li style=&quot;text-align: left;&quot;&gt;10K clicks/sec:&lt;/li&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;services LB+autoscale&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;OLAP DB: shard by AdId or AdvertiserId&lt;/li&gt;&lt;/ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;No loss of clicks:&lt;/li&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Kafka is distributed, fault tolerant, highly available and can persist data&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;retention period 7 days&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;periodic reconciliation: store raw clicks in S3. Batch job aggregates and compare to stream processor. Fix if needed.&lt;/li&gt;&lt;/ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;No multiple ad clicks:&lt;/li&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;store {userId, adId} in Redis. If duplicate then drop click. Generate unique impression ID + secret key.&lt;/li&gt;&lt;/ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Advertisers query metrics at low latency&lt;/li&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;real-time processing in OLAP. For larger time windows cron job aggregates and stores in a new table.&lt;/li&gt;&lt;/ul&gt;&lt;/ol&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="640" width="730" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-30" value="&lt;h2 style=&quot;text-align: left;&quot;&gt;Data Model&lt;/h2&gt;&lt;div&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Advertisement: id, redirectURL,...&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;AggregatedData: addId, advertiserId, clickCount&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="510" y="580" width="320" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-31" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="75" y="840" width="20" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-32" value="User" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="60" y="877" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-33" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1" target="ItXA_61CWnjTCcT5c4l9-34">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="860" as="sourcePoint" />
+            <mxPoint x="180" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-34" value="LB + API GW" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="140" y="820" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-36" value="Add Placement Service" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="820" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-37" value="Click Processor" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="950" width="120" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-38" value="Cache (Redis)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="890" width="60" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-39" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="ItXA_61CWnjTCcT5c4l9-34">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="220" y="1020" as="sourcePoint" />
+            <mxPoint x="270" y="970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-40" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1.05;exitY=0.388;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="ItXA_61CWnjTCcT5c4l9-34">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="220" y="900" as="sourcePoint" />
+            <mxPoint x="270" y="850" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-41" value="Kinesis" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="425" y="953.5" width="65" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-42" value="Fink" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="954" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-43" value="OLAP DB" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="870" width="70" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-44" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="730" y="810" width="20" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-45" value="Advertiser" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="700" y="840" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-56" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ItXA_61CWnjTCcT5c4l9-46" target="ItXA_61CWnjTCcT5c4l9-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-46" value="Analytics Service" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="880" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-47" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="ItXA_61CWnjTCcT5c4l9-37">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="375" y="1020" as="sourcePoint" />
+            <mxPoint x="425" y="970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-48" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="ItXA_61CWnjTCcT5c4l9-41">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="1020" as="sourcePoint" />
+            <mxPoint x="510" y="970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-49" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="ItXA_61CWnjTCcT5c4l9-42">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="968" as="sourcePoint" />
+            <mxPoint x="610" y="918" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-50" value="Raw Click Data&amp;nbsp;&lt;div&gt;(S3)&lt;/div&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="555" y="1000" width="125" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-51" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.07;exitY=0.4;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="ItXA_61CWnjTCcT5c4l9-50">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="1034.5" as="sourcePoint" />
+            <mxPoint x="550" y="984.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ItXA_61CWnjTCcT5c4l9-52" target="ItXA_61CWnjTCcT5c4l9-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-52" value="Reconciliation Worker" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="940" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-59" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ItXA_61CWnjTCcT5c4l9-53" target="ItXA_61CWnjTCcT5c4l9-52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-53" value="Spark (Map/Reduce)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="1020" width="100" height="32.25" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-55" value="cron" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="735" y="1052.25" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-58" value="fix" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="630" y="928" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ItXA_61CWnjTCcT5c4l9-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.867;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ItXA_61CWnjTCcT5c4l9-44" target="ItXA_61CWnjTCcT5c4l9-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
