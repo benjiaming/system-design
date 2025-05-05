@@ -1,0 +1,151 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36" version="26.2.14">
+  <diagram name="Page-1" id="Ofg-lrRc5zlrJ35_E0Fd">
+    <mxGraphModel dx="1205" dy="784" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-13" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="75" y="402" width="30" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-1" value="&lt;h1&gt;Uber&lt;/h1&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="380" width="80" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-2" value="&lt;h2 style=&quot;text-align: left;&quot;&gt;Functional Requirements&lt;/h2&gt;&lt;div&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Riders input location/destination and get estimate&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Riders request ride based on estimate&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Riders are matched with available nearby drivers&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Drivers accept/deny requests &amp;amp; navigate to pickup/dropoff&lt;/li&gt;&lt;/ul&gt;&lt;h2 style=&quot;text-align: left;&quot;&gt;Out of Scope&lt;/h2&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;riders rate drivers/drivers rate riders&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;riders schedule future rides&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;riders requests different categories&amp;nbsp;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="30" width="370" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-3" value="&lt;h2&gt;Non-Functional Requirements&lt;/h2&gt;&lt;div&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Low latency matching &amp;lt; 1m&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Strong consistency for matching (no &quot;double booking&quot; drivers)&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;High throughput during peak &amp;lt;100 simultaneous req/location&lt;/li&gt;&lt;/ul&gt;&lt;h2 style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Out of Scope&lt;/h2&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;privacy (GDPR)/security&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;resiliency to failures (redundancy/failover)&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;easy deployments (CI/CD)&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="460" y="50" width="390" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-4" value="&lt;h2&gt;Core Entities&lt;/h2&gt;&lt;div&gt;Driver | Rider | Location | Fare | Ride&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;labelBackgroundColor=none;textShadow=0;labelBorderColor=none;rounded=1;glass=0;direction=west;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry x="270" y="160" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-5" value="&lt;h2&gt;API&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="390" y="250" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-6" value="POST /fare { from, to } -&amp;gt; Fare" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="120" y="290" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-8" value="POST /ride { fareId } -&amp;gt; Ride&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="120" y="312" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-9" value="POST /driver/location {location} -&amp;gt; Ok | Error" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="450" y="290" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-10" value="PATCH /ride/:rideId/accept|deny -&amp;gt; Ok | Error" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="450" y="312" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-12" value="&lt;h2&gt;High Level Design&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="320" y="342" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-16" value="Rider" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="442" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-17" value="LB + API GW" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="412" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-18" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="I8cwz5ZWIhXihqtpy3hv-16" target="I8cwz5ZWIhXihqtpy3hv-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="120" y="482" as="sourcePoint" />
+            <mxPoint x="170" y="432" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="I8cwz5ZWIhXihqtpy3hv-19" target="I8cwz5ZWIhXihqtpy3hv-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="I8cwz5ZWIhXihqtpy3hv-19" target="I8cwz5ZWIhXihqtpy3hv-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-19" value="Ride Service" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="472" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-21" value="3rd party mapping" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="412" width="160" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-23" value="Ride DB" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="450" width="70" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-24" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="I8cwz5ZWIhXihqtpy3hv-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="540" as="sourcePoint" />
+            <mxPoint x="370" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-25" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="I8cwz5ZWIhXihqtpy3hv-19" target="I8cwz5ZWIhXihqtpy3hv-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="530" as="sourcePoint" />
+            <mxPoint x="530" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-26" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="75" y="502" width="30" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-27" value="Driver" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="60" y="542" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-28" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="I8cwz5ZWIhXihqtpy3hv-27">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="509" as="sourcePoint" />
+            <mxPoint x="190" y="459" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-29" value="Location Service" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="572" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-30" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="I8cwz5ZWIhXihqtpy3hv-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="630" as="sourcePoint" />
+            <mxPoint x="370" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="I8cwz5ZWIhXihqtpy3hv-31" target="I8cwz5ZWIhXihqtpy3hv-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-31" value="Notification Service (APN/FCM)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="560" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-37" value="Location DB (Redis)" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="530" y="560" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-38" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.36;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="I8cwz5ZWIhXihqtpy3hv-29" target="I8cwz5ZWIhXihqtpy3hv-37">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="630" as="sourcePoint" />
+            <mxPoint x="510" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-40" value="RideDB:&lt;div&gt;Fare: id, riderId, source, destination, ETA, estimate&lt;/div&gt;&lt;div&gt;Ride: riderId, driverId, fareId&lt;/div&gt;&lt;div&gt;Driver: id, name, car, status&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="560" y="370" width="290" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-41" value="Message Queue (Kafka)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="522" width="100" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-42" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="I8cwz5ZWIhXihqtpy3hv-41">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="550" as="sourcePoint" />
+            <mxPoint x="440" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-43" value="&lt;h2&gt;Deep Dives&lt;/h2&gt;&lt;div&gt;&lt;ol&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Handle frequent driver location updates &amp;amp; efficient proximity searches:&lt;/li&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;write heavy db/queries inefficient&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;use Redis + geohashing, GEOSEARCH for searches&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;enable Redis persistence/Redis sentinel, sharding geographically.&amp;nbsp;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;location should expire with TTL 30 minutes. Offline process can aggregate before expiration for analysis&lt;/li&gt;&lt;/ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Manage system overload from frequent driver updates while ensuring location accuracy&lt;/li&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;adaptive location update intervals: dynamically update frequency of updates depending on current conditions&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;challenge: think of an efficient algorithm&lt;/li&gt;&lt;/ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Prevent multiple rides from being sent to the same driver:&lt;/li&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;distributed Redis lock + TTL. Ride service needs to check if driver is locked (as well as driver&#39;s status)&lt;/li&gt;&lt;/ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Ensure no rider requests are being dropped during peek&lt;/li&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;add a message queue (SNS or Kafka)&lt;/li&gt;&lt;/ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Further scale to reduce latency and improve throughput&lt;/li&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;geosharding with read replicas&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;consistent hashing + replication strategy&lt;/li&gt;&lt;/ul&gt;&lt;/ol&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="60" y="630" width="680" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-47" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="459" y="522" as="sourcePoint" />
+            <mxPoint x="459" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-48" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="424" y="522" as="sourcePoint" />
+            <mxPoint x="424" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I8cwz5ZWIhXihqtpy3hv-49" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="409.5" y="524" as="sourcePoint" />
+            <mxPoint x="409.5" y="502" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
