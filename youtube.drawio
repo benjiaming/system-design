@@ -1,0 +1,169 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36" version="27.0.3">
+  <diagram name="Page-1" id="hni9xJdzm_z0W-8zbjaf">
+    <mxGraphModel dx="1205" dy="1884" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-1" value="&lt;h1&gt;YouTube&lt;/h1&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="360" y="-2" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-2" value="&lt;h2&gt;Functional Requirements&lt;/h2&gt;&lt;div&gt;&lt;ol&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Users should be able to view/stream videos&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Users should be able to upload videos&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="80" width="290" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-3" value="&lt;h2&gt;Non-Functional Requirements&lt;/h2&gt;&lt;div&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;availability &amp;gt; consistency&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;upload/stream videos up to 256GB&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;streaming latency &amp;lt;300ms&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;1M uploads/day/100M DAU&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="530" y="80" width="280" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-4" value="&lt;h2&gt;Out Of Scope&lt;/h2&gt;&lt;div&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;like/comment/subscribe/search&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;recommendations&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;channels&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="310" y="140" width="230" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-5" value="&lt;h2&gt;Core Entities&lt;/h2&gt;&lt;div&gt;Video | Metadata | User&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="50" y="180" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-6" value="&lt;h2&gt;API&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="395" y="267" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-8" value="GET /videos/:videoId -&amp;gt; [Video,Metadata]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="327" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-9" value="GET /videos/?cursor={}&amp;amp;limit={} -&amp;gt; Metadata[]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="280" y="327" width="270" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-10" value="PUT&amp;nbsp; /presignedUrl/ {chunk, metadata} -&amp;gt; Video.id" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="550" y="327" width="290" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-11" value="&lt;h2&gt;High Level Design&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="330" y="357" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-12" value="User" style="html=1;whiteSpace=wrap;strokeColor=none;fillColor=#0079D6;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;align=center;fontSize=12;outlineConnect=0;spacingTop=-6;fontColor=#FFFFFF;sketch=0;shape=mxgraph.sitemap.user;" vertex="1" parent="1">
+          <mxGeometry x="30" y="592.15" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="nNfqWACBlaUkg7JkU7Ix-13" target="nNfqWACBlaUkg7JkU7Ix-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-13" value="" style="points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.apigateway;" vertex="1" parent="1">
+          <mxGeometry x="191.3" y="592.15" width="43.199999999999996" height="41.699999999999996" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-15" value="LB/API GW" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="174.5" y="641" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-16" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="nNfqWACBlaUkg7JkU7Ix-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="364.5" y="563" as="sourcePoint" />
+            <mxPoint x="188.5" y="613" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="nNfqWACBlaUkg7JkU7Ix-17">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-17" value="Video Service" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="610" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-19" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.s3;fillColor=#E05243;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="540" y="459.15" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-21" value="Metadata DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="530" y="610" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.79;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="nNfqWACBlaUkg7JkU7Ix-17" target="nNfqWACBlaUkg7JkU7Ix-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="nNfqWACBlaUkg7JkU7Ix-24" target="nNfqWACBlaUkg7JkU7Ix-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="nNfqWACBlaUkg7JkU7Ix-24" target="nNfqWACBlaUkg7JkU7Ix-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-24" value="Video Processing Service" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="nNfqWACBlaUkg7JkU7Ix-25" target="nNfqWACBlaUkg7JkU7Ix-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-25" value="Transcoder" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="488" width="110" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-27" value="Chunker" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="410" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="nNfqWACBlaUkg7JkU7Ix-27">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="425" as="sourcePoint" />
+            <mxPoint x="560" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="nNfqWACBlaUkg7JkU7Ix-20" target="nNfqWACBlaUkg7JkU7Ix-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-20" value="S3" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="540" y="499.15" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-33" value="&lt;i&gt;presignedUrls&lt;/i&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="270" y="480" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-38" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.21;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.995;exitY=0.005;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="nNfqWACBlaUkg7JkU7Ix-12" target="nNfqWACBlaUkg7JkU7Ix-19">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="170" y="490" as="sourcePoint" />
+            <mxPoint x="450" y="470" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="440" y="490" />
+              <mxPoint x="400" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-39" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.lambda_function;fillColor=#5294CF;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="565" y="540.85" width="30" height="29.15" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-40" value="Lambda" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="525" y="585" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-45" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="nNfqWACBlaUkg7JkU7Ix-42" target="nNfqWACBlaUkg7JkU7Ix-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-42" value="" style="points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cdn_content_distribution_network;" vertex="1" parent="1">
+          <mxGeometry x="59" y="510" width="51" height="42.3" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-43" value="CDN" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="59" y="480" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-44" value="&lt;i&gt;S3 multi-part upload&lt;/i&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="149.5" y="516.15" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-46" value="Video" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="525" y="700" width="140" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-48" value="id&lt;div&gt;name&lt;/div&gt;&lt;div&gt;description&lt;/div&gt;&lt;div&gt;keywords&lt;/div&gt;&lt;div&gt;status&lt;/div&gt;&lt;div&gt;lastChunkPlayed&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="nNfqWACBlaUkg7JkU7Ix-46">
+          <mxGeometry y="30" width="140" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-51" value="VideoChunks" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="685" y="700" width="140" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-52" value="videoId&lt;div&gt;s3ChunkUrl&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;status&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;bitrate&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="nNfqWACBlaUkg7JkU7Ix-51">
+          <mxGeometry y="30" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.79;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.167;entryY=-0.033;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="nNfqWACBlaUkg7JkU7Ix-19" target="nNfqWACBlaUkg7JkU7Ix-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-54" value="&lt;i&gt;notification&lt;/i&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="560" y="514.15" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-57" value="&lt;h3&gt;Streaming Protocols&lt;/h3&gt;&lt;div&gt;&lt;ol&gt;&lt;li style=&quot;text-align: left;&quot;&gt;HLS (Apple): HTTP Live Streaming&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;DASH: Dynamic Adaptive Streaming over HTTP&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="482.9" y="850" width="320" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-59" value="&lt;h2&gt;Deep Dive&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="260" y="700" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-60" value="&lt;h3&gt;Adaptive Bitrate Streaming&lt;/h3&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;ul&gt;&lt;li&gt;incrementally download segments in different formats&lt;/li&gt;&lt;li&gt;Video Processing Service creates manifest (fingerprints + bitrate)&lt;/li&gt;&lt;li&gt;manifest &amp;amp; chunks stored in S3 and CDN&lt;/li&gt;&lt;li&gt;client requests next chunk based on network conditions&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="14.999999999999998" y="770" width="410" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-61" value="&lt;h3&gt;Resumable Uploads&lt;/h3&gt;&lt;div&gt;&lt;ol&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Client splits video into chunks with fingerprint/hash&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Metadata DB stores chunks as JSON (fingerprint+status)&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;POST /update_chunks {chunks[], status[NOT_UPLOADED]&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;upload chunks to S3 using presigned S3 URL&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;S3 sends event notification to Lambda that marks chunk as uploaded&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;client can resume upload by fetching video metadata&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="7.899999999999999" y="910" width="430" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-62" value="&lt;h3&gt;Resume watching from different device&lt;/h3&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;ul&gt;&lt;li&gt;user requests to play with GET /video/{videoId}&lt;/li&gt;&lt;li&gt;client sends heartbeat every 5 sec PUT /heartbeat/{s3Urlchunk}&lt;/li&gt;&lt;li&gt;Video Service keeps updating lastChunkPlayed in the Video table&lt;/li&gt;&lt;li&gt;Video Service returns the next S3UrlChunk to the client&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="437.9" y="940" width="410" height="130" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
