@@ -8,28 +8,28 @@
           <mxGeometry x="360" y="-2" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="nNfqWACBlaUkg7JkU7Ix-2" value="&lt;h2&gt;Functional Requirements&lt;/h2&gt;&lt;div&gt;&lt;ol&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Users should be able to view/stream videos&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;Users should be able to upload videos&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="20" y="80" width="290" height="110" as="geometry" />
+          <mxGeometry x="20" y="90" width="290" height="110" as="geometry" />
         </mxCell>
         <mxCell id="nNfqWACBlaUkg7JkU7Ix-3" value="&lt;h2&gt;Non-Functional Requirements&lt;/h2&gt;&lt;div&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;availability &amp;gt; consistency&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;upload/stream videos up to 256GB&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;streaming latency &amp;lt;300ms&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;1M uploads/day/100M DAU&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="530" y="80" width="280" height="130" as="geometry" />
+          <mxGeometry x="550" y="90" width="280" height="130" as="geometry" />
         </mxCell>
         <mxCell id="nNfqWACBlaUkg7JkU7Ix-4" value="&lt;h2&gt;Out Of Scope&lt;/h2&gt;&lt;div&gt;&lt;ul&gt;&lt;li style=&quot;text-align: left;&quot;&gt;like/comment/subscribe/search&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;recommendations&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;channels&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="310" y="140" width="230" height="120" as="geometry" />
+          <mxGeometry x="320" y="90" width="230" height="120" as="geometry" />
         </mxCell>
         <mxCell id="nNfqWACBlaUkg7JkU7Ix-5" value="&lt;h2&gt;Core Entities&lt;/h2&gt;&lt;div&gt;Video | Metadata | User&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="50" y="180" width="150" height="80" as="geometry" />
+          <mxGeometry x="50" y="210" width="150" height="80" as="geometry" />
         </mxCell>
         <mxCell id="nNfqWACBlaUkg7JkU7Ix-6" value="&lt;h2&gt;API&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="395" y="267" width="50" height="60" as="geometry" />
+          <mxGeometry x="465" y="190" width="50" height="60" as="geometry" />
         </mxCell>
         <mxCell id="nNfqWACBlaUkg7JkU7Ix-8" value="GET /videos/:videoId -&amp;gt; [Video,Metadata]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="30" y="327" width="240" height="30" as="geometry" />
+          <mxGeometry x="220" y="230" width="240" height="30" as="geometry" />
         </mxCell>
         <mxCell id="nNfqWACBlaUkg7JkU7Ix-9" value="GET /videos/?cursor={}&amp;amp;limit={} -&amp;gt; Metadata[]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="280" y="327" width="270" height="30" as="geometry" />
+          <mxGeometry x="220" y="260" width="270" height="30" as="geometry" />
         </mxCell>
         <mxCell id="nNfqWACBlaUkg7JkU7Ix-10" value="PUT&amp;nbsp; /presignedUrl/ {chunk, metadata} -&amp;gt; Video.id" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="550" y="327" width="290" height="30" as="geometry" />
+          <mxGeometry x="515" y="230" width="290" height="30" as="geometry" />
         </mxCell>
         <mxCell id="nNfqWACBlaUkg7JkU7Ix-11" value="&lt;h2&gt;High Level Design&lt;/h2&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="330" y="357" width="180" height="60" as="geometry" />
@@ -160,8 +160,11 @@
         <mxCell id="nNfqWACBlaUkg7JkU7Ix-61" value="&lt;h3&gt;Resumable Uploads&lt;/h3&gt;&lt;div&gt;&lt;ol&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Client splits video into chunks with fingerprint/hash&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Metadata DB stores chunks as JSON (fingerprint+status)&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;POST /update_chunks {chunks[], status[NOT_UPLOADED]&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;upload chunks to S3 using presigned S3 URL&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;S3 sends event notification to Lambda that marks chunk as uploaded&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;client can resume upload by fetching video metadata&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="7.899999999999999" y="910" width="430" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="nNfqWACBlaUkg7JkU7Ix-62" value="&lt;h3&gt;Resume watching from different device&lt;/h3&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;ul&gt;&lt;li&gt;user requests to play with GET /video/{videoId}&lt;/li&gt;&lt;li&gt;client sends heartbeat every 5 sec PUT /heartbeat/{s3Urlchunk}&lt;/li&gt;&lt;li&gt;Video Service keeps updating lastChunkPlayed in the Video table&lt;/li&gt;&lt;li&gt;Video Service returns the next S3UrlChunk to the client&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-62" value="&lt;h3&gt;Resume watching from different device&lt;/h3&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;ul&gt;&lt;li&gt;user requests to play with GET /video/{videoId}&lt;/li&gt;&lt;li&gt;client sends heartbeat every 5 sec PUT /heartbeat/{s3ChunkUrl}&lt;/li&gt;&lt;li&gt;Video Service keeps updating lastChunkPlayed in the Video table&lt;/li&gt;&lt;li&gt;Video Service returns the next s3ChunkUrl to the client&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="437.9" y="940" width="410" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="nNfqWACBlaUkg7JkU7Ix-67" value="PUT&amp;nbsp; /heartbeat/{s3ChunkUrl}" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="525" y="260" width="180" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
